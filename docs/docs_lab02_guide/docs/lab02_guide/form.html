@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แบบฟอร์มแนะนำสถานที่ใหม่ - KKU Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Box model setup */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root{
+      /* ชุดสีเดียวกับหน้า Index */
+      --card: #ffffff;
+      --accent: #ee6a18;
+      --accent-dark: #c94c02;
+      --muted: #475569;
+      --radius: 16px;
+      --input-bg: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    body{
+      margin: 0;
+      font-family: "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      
+      /* พื้นหลัง Gradient และ Animation */
+      background: linear-gradient(135deg, #fffbf7 0%, #fff0e3 50%, #ffead1 100%);
+      background-attachment: fixed;
+      
+      color: #1e293b;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+      justify-content: center; /* จัดกึ่งกลางแนวนอน */
+      padding: 20px;
+    }
+
+    /* =========================================
+       Animation ละอองส้ม (Copy มาจาก Index)
+       ========================================= */
+    .particle-background {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        overflow: hidden; z-index: -1; pointer-events: none;
+    }
+    .particle {
+        position: absolute; bottom: -50px;
+        background: var(--accent); border-radius: 50%;
+        opacity: 0; animation: riseUp linear infinite;
+    }
+    @keyframes riseUp {
+        0% { opacity: 0; transform: translateY(0) scale(1); }
+        10% { opacity: 0.4; }
+        90% { opacity: 0.2; }
+        100% { opacity: 0; transform: translateY(-120vh) scale(1.5); }
+    }
+    /* ตั้งค่าละอองแต่ละอัน */
+    .particle:nth-child(1) { left: 10%; width: 15px; height: 15px; animation-duration: 25s; animation-delay: -5s; }
+    .particle:nth-child(2) { left: 35%; width: 8px; height: 8px; background: var(--accent-dark); animation-duration: 35s; animation-delay: -12s; opacity: 0.3; }
+    .particle:nth-child(3) { left: 55%; width: 12px; height: 12px; animation-duration: 28s; animation-delay: -2s; }
+    .particle:nth-child(4) { left: 75%; width: 10px; height: 10px; animation-duration: 32s; animation-delay: -18s; }
+    .particle:nth-child(5) { left: 90%; width: 6px; height: 6px; animation-duration: 22s; animation-delay: -8s; }
+    .particle:nth-child(6) { left: 20%; width: 9px; height: 9px; background: #ffbf8f; animation-duration: 30s; animation-delay: -25s; }
+
+
+    /* =========================================
+       ส่วนของ Form Container
+       ========================================= */
+    .container{
+      width: 100%;
+      max-width: 600px;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 24px;
+      /* เงาสีส้มจางๆ เหมือนหน้า Index */
+      box-shadow: 0 10px 40px -10px rgba(238, 106, 24, 0.2); 
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1{
+      margin-top:0;
+      margin-bottom: 30px;
+      color: var(--accent-dark); /* สีส้มเข้ม */
+      text-align:center;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    label{
+      font-weight: 600;
+      margin-top: 20px;
+      display: block;
+      color: #334155;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    input, textarea{
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--input-bg);
+      font-size: 1rem;
+      font-family: "Noto Sans Thai";
+      color: #1e293b;
+      transition: all 0.2s ease;
+    }
+
+    /* Effect ตอนกดพิมพ์ */
+    input:focus, textarea:focus {
+        border-color: var(--accent);
+        background: white;
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(238, 106, 24, 0.15);
+    }
+
+    textarea{
+      height: 120px;
+      resize: vertical;
+    }
+
+    /* ปุ่มกดสไตล์เดียวกับหน้า Index */
+    button{
+      margin-top: 30px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent) 0%, #ff8c42 100%);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(238, 106, 24, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    button:hover{
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 8px 25px rgba(238, 106, 24, 0.5);
+    }
+
+    button:active{
+        transform: translateY(1px);
+    }
+
+    a.back{
+      display: inline-block;
+      text-align: center;
+      margin-top: 20px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      width: 100%;
+    }
+
+    a.back:hover {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px){
+        .container { padding: 24px; }
+        h1 { font-size: 1.5rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="particle-background" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="container">
+    <h1>แนะนำสถานที่ใหม่</h1>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="9da61e7d-4b07-4b99-a30a-9f4effbf8d1d">
+      
+      <label>ชื่อผู้ส่ง</label>
+      <input type="text" name="name" placeholder="กรอกชื่อของคุณ" required>
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="กรอกอีเมลของคุณ" required>
+
+      <label>หัวข้อแนะนำสถานที่ใหม่</label>
+      <input type="text" name="topic" placeholder="เช่น สถานที่น่าสนใจใหม่ใน มข." required>
+
+      <label>ชื่อสถานที่</label>
+      <input type="text" name="place_name" placeholder="กรอกชื่อสถานที่" required>
+
+      <label>รายละเอียด</label>
+      <textarea name="message" placeholder="กรอกรายละเอียดของสถานที่..." required></textarea>
+
+      <label>ลิงก์ภาพ URL</label>
+      <input type="url" name="image_url" placeholder="https://..." required>
+
+      <button type="submit">ส่งข้อมูล</button>
+    </form>
+
+    <a href="index.html" class="back">← กลับหน้าหลัก</a>
+  </div>
+
+</body>
+</html>

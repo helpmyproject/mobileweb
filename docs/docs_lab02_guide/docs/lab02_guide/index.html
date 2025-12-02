@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KKU Campus Guide - แนะนำสถานที่ มหาวิทยาลัยขอนแก่น</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Box model setup */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root{
+      /* ปรับสีพื้นฐานใหม่ */
+      --card: #ffffff;
+      --accent: #ee6a18; /* สีประจำ มข. */
+      --accent-dark: #c94c02; /* สีส้มเข้มสำหรับไล่เฉด */
+      --muted: #35393f;
+      --radius: 16px;
+    }
+
+    body{
+      margin: 0;
+      font-family: "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(135deg, #fffbf7 0%, #fff0e3 50%, #ffead1 100%);
+      background-attachment: fixed;
+      color: #1b2330;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Animation ละอองส้ม */
+    .particle-background {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        overflow: hidden; z-index: -1; pointer-events: none;
+    }
+    .particle {
+        position: absolute; bottom: -50px;
+        background: var(--accent); border-radius: 50%;
+        opacity: 0; animation: riseUp linear infinite;
+    }
+    @keyframes riseUp {
+        0% { opacity: 0; transform: translateY(0) scale(1); }
+        10% { opacity: 0.4; }
+        90% { opacity: 0.2; }
+        100% { opacity: 0; transform: translateY(-120vh) scale(1.5); }
+    }
+    .particle:nth-child(1) { left: 10%; width: 15px; height: 15px; animation-duration: 25s; animation-delay: -5s; }
+    .particle:nth-child(2) { left: 35%; width: 8px; height: 8px; background: var(--accent-dark); animation-duration: 35s; animation-delay: -12s; opacity: 0.3; }
+    .particle:nth-child(3) { left: 55%; width: 12px; height: 12px; animation-duration: 28s; animation-delay: -2s; }
+    .particle:nth-child(4) { left: 75%; width: 10px; height: 10px; animation-duration: 32s; animation-delay: -18s; }
+    .particle:nth-child(5) { left: 90%; width: 6px; height: 6px; animation-duration: 22s; animation-delay: -8s; }
+    .particle:nth-child(6) { left: 20%; width: 9px; height: 9px; background: #ffbf8f; animation-duration: 30s; animation-delay: -25s; }
+
+
+    header{
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: white;
+      padding: 32px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 25px rgba(238, 106, 24, 0.25);
+      position: relative;
+      z-index: 10;
+    }
+
+    .container{ max-width: 1100px; margin: 30px auto; padding: 0 24px; position: relative; z-index: 2;}
+
+    .brand{
+      display:flex; align-items:center; gap:14px; justify-content: flex-start;
+    }
+
+    .brand h1{ margin:0; font-size:1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    .brand p{ margin:0; opacity:.92; font-weight: 300; }
+
+    .logo{
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+      transition: transform 0.3s;
+    }
+    
+    .logo:hover { transform: rotate(-5deg) scale(1.1); }
+
+    .logo-link{
+      display:flex;
+      align-items:center;
+    }
+
+    /* ตกแต่งรูป Profile User */
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .user-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px; /* สี่เหลี่ยมมุมมน */
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.6);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    
+    .user-avatar:hover {
+        transform: scale(1.1);
+        border-color: #fff;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end; /* จัดให้ชิดขวาเสมอ */
+    }
+
+    /* ===========================================
+       ส่วนที่แก้ไข: ปรับ Badge ให้เลขอยู่กึ่งกลาง
+       =========================================== */
+    .id-badge{ 
+        background: rgba(255,255,255,0.25); 
+        color: white; 
+        
+        /* ใช้ Flexbox จัดกึ่งกลาง */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        
+        /* ปรับขนาดให้พอดี */
+        padding: 5px 14px; /* บน-ล่าง 5px, ซ้าย-ขวา 14px */
+        min-width: 110px;  /* กำหนดความกว้างขั้นต่ำเพื่อให้ดูสมส่วน */
+        height: 28px;      /* กำหนดความสูงที่แน่นอน */
+        
+        border-radius: 50px; /* ปรับเป็นทรงแคปซูล (หรือใช้ 8px ถ้าชอบเหลี่ยมๆ) */
+        font-weight: 600; 
+        font-size: 0.85rem; 
+        line-height: 1; /* ตัดระยะห่างบรรทัดส่วนเกิน */
+        
+        backdrop-filter: blur(4px); 
+        margin-bottom: 6px;
+        border: 1px solid rgba(255,255,255,0.2); /* เพิ่มขอบจางๆ */
+    }
+    /* =========================================== */
+
+    @media (max-width: 480px){
+        .user-info { display: none; }
+    }
+    
+    main{ margin-top:24px; }
+
+    /* Grid for places */
+    .places{ display:grid; grid-template-columns: repeat(2, 1fr); gap:24px; }
+
+    article.card{
+      background: var(--card);
+      padding:24px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px -10px rgba(238, 106, 24, 0.15); 
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      overflow:hidden;
+      display:flex; flex-direction:column; gap:16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    article.card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -10px rgba(238, 106, 24, 0.3);
+    }
+
+    article.card header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    article.card h2{ margin:0; font-size:1.25rem; color: #334155; }
+    article.card p{ margin:0; color:var(--muted); font-size: 0.95rem;}
+
+    .gallery{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
+    
+    .gallery figure{ margin:0; border-radius:12px; overflow:hidden; position: relative; z-index: 1; }
+    
+    .gallery figure::before {
+      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 160px;
+      background: radial-gradient(circle at center, rgba(238, 106, 24, 0.5) 0%, transparent 75%);
+      opacity: 0; z-index: 2; transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none; transform: scale(0.9); border-radius: 12px;
+    }
+
+    .gallery figure:hover::before { opacity: 1; transform: scale(1); }
+    
+    .gallery img {
+      display: block; width: 100%; height: 160px; object-fit: cover;
+      border-radius: 12px; transition: transform 0.4s ease; position: relative; z-index: 1;
+    }
+
+    .gallery figure:hover img { transform: scale(1.08); }
+
+    .gallery figcaption {
+        font-size: 0.8rem; color: #63738a; margin-top: 6px; text-align: center; position: relative; z-index: 3;
+    }
+
+    footer.sitefoot{
+      margin-top:40px; padding:20px; background:transparent; text-align:center; color:var(--muted);
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .intro{
+      display:flex; gap:20px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+      margin-bottom: 30px;
+    }
+    .intro .lead h2 { color: var(--accent-dark); margin-bottom: 8px; }
+    .intro .lead{ max-width:720px; }
+    .meta{ font-size:0.875rem; color:var(--muted); }
+    
+
+    .btn {
+      background: linear-gradient(135deg, var(--accent) 0%, #ff8c42 100%);
+      color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none;
+      font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(238, 106, 24, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(238, 106, 24, 0.5); }
+    .btn:active { transform: translateY(1px); }
+
+    @media (max-width: 900px){
+      .places{ grid-template-columns: 1fr; }
+      .gallery img{ height:160px; }
+      .gallery figure::before { height: 160px; }
+    }
+
+    @media (max-width: 480px){
+      header{ padding:24px 16px; }
+      .brand h1{ font-size:1.25rem; }
+      .gallery img{ height:120px; }
+      .gallery figure::before { height: 120px; }
+      .intro{ flex-direction:column; align-items:flex-start; gap: 10px; }
+    }
+
+  </style>
+</head>
+<body id="top">
+
+  <div class="particle-background" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <header>
+    <div class="container" style="margin: 0 auto;">
+      <div class="brand" style="display:flex; justify-content: space-between; align-items: center; gap:14px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <a href="#top" class="logo-link">
+            <img src="images/kku_logo.png" alt="KKU Logo" class="logo">
+          </a>
+          <div>
+            <h1>KKU Campus Guide</h1>
+            <p style="opacity: 0.9;">แนะนำสถานที่สำคัญ มข.</p>
+          </div>
+        </div>
+
+        <div class="user-profile">
+            <div class="user-info">
+                <div class="id-badge">663380381-5</div>
+                <div style="font-size:0.9rem; opacity:0.95; font-weight:500;">นายณัฐดนัย ชาวไทย</div>
+            </div>
+            <img src="images/profile.jpg" alt="User Profile" class="user-avatar">
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="intro">
+      <div class="lead">
+        <h2>ยินดีต้อนรับสู่ ม.ขอนแก่น</h2>
+        <p class="meta" style="font-size: 1rem;">หน้านี้รวบรวมสถานที่น่าสนใจภายในมหาวิทยาลัยขอนแก่น (KKU) ทั้งตึกเรียน หอสมุด ศูนย์อาหาร และพื้นที่กิจกรรม เพื่อช่วยนักศึกษาใหม่และผู้เยี่ยมชมเดินทางง่ายขึ้น</p>
+      </div>
+    </section>
+
+    <section class="places" aria-label="รายการสถานที่">
+      <article class="card" id="library">
+        <header>
+          <h2>หอสมุดกลาง (Central Library)</h2>
+        </header>
+        <p>หอสมุดกลางของมหาวิทยาลัยขอนแก่น เป็นศูนย์รวมหนังสือ วารสาร และที่นั่งอ่านสำหรับนักศึกษา มีพื้นที่สงบและบริการยืมคืนทรัพยากรการเรียนรู้</p>
+        <div class="gallery">
+          <figure>
+            <img src="https://library.kku.ac.th/wp-content/uploads/2022/04/1-1024x576.png" alt="ภายในหอสมุด มีชั้นหนังสือและโต๊ะอ่านหนังสือ">
+            <figcaption>บรรยากาศภายนอก</figcaption>
+          </figure>
+          <figure>
+            <img src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t1.6435-9/70948709_2268738486570694_6979210461728210944_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=RTaOQGwz9IwQ7kNvwE47d6A&_nc_oc=AdlvUir-KS-UobbVl_FEVn3EyCbDaEAjfzPuV8-TbBpgy8WpXPK6sTTy4MZpluv-66w&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=fHAv7o1N2TXIxrmsgYSHEw&oh=00_AfnsrxSPmmQxY36wXnTc9n1H5yF60jnIhmc1pSkBtOVVGg&oe=6955DAAA" alt="หน้าตึกหอสมุดกลาง มหาวิทยาลัย">
+            <figcaption>บรรยากาศภายใน</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card" id="foodcourt">
+        <header>
+          <h2>ศูนย์อาหารกลาง (Complex)</h2>
+        </header>
+        <p>ศูนย์อาหารรวมร้านอาหารหลากหลาย ตั้งอยู่ใจกลางมหาวิทยาลัย เป็นจุดพบปะของนักศึกษาและคณาจารย์ เหมาะสำหรับมื้อกลางวันหรือพักผ่อนระหว่างเรียน</p>
+        <div class="gallery">
+          <figure>
+            <img src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/492505776_1247140880748929_1223993081445126122_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5Q-Mn4u5kAIQ7kNvwEoVRb_&_nc_oc=AdnCcO5AvLxvY519mTJoVmmg5b-JBF_-uXkjjQx_Y5nH1QOrTJAokqgoJulQV3lkkNw&_nc_zt=23&_nc_ht=scontent.fbkk13-2.fna&_nc_gid=aEAuISpDw7_XqZnKOpa1QA&oh=00_AfkajHtJkyvV_hMvNuDVs5LA_hgopCGwtTpUo--z8EGu1Q&oe=693427A2" alt="ร้านอาหารและโต๊ะนั่งในศูนย์อาหาร">
+            <figcaption>KKU Complex</figcaption>
+          </figure>
+          <figure>
+            <img src="https://asset.kku.ac.th/wp-content/uploads/2022/05/2022-05-11_06-57-12_270057-1024x683.jpg" alt="นักศึกษานั่งทานข้าวกันในศูนย์อาหาร">
+            <figcaption>โรงชาย (Cafeteria)</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card" id="csbuilding">
+        <header>
+          <h2>วิทยาลัยการคอมพิวเตอร์ (CP KKU)</h2>
+        </header>
+        <p>ตึกวิทยาลัยการคอมพิวเตอร์เป็นที่ตั้งของภาควิชาต่าง ๆ ห้องปฏิบัติการ และกิจกรรมชมรมด้านเทคโนโลยี เหมาะสำหรับการเรียนและทำโปรเจกต์</p>
+        <div class="gallery">
+          <figure>
+            <img src="https://api.computing.kku.ac.th//storage/images/2024-8-5-1724317831-1.png" alt="ห้องปฏิบัติการคอมพิวเตอร์และนักศึกษา">
+            <figcaption>ห้องปฏิบัติการ</figcaption>
+          </figure>
+          <figure>
+            <img src="https://api.computing.kku.ac.th//storage/images/2025-2-1-1738497276-1.png" alt="อาคารภายนอกของตึกคอมพิวเตอร์">
+            <figcaption>ตึกวิภาส 'ตึกที่ 9'</figcaption>
+          </figure>
+        </div> 
+      </article>
+
+      <article class="card" id="stadium">
+        <header>
+          <h2>สนามกีฬา (Sports Complex)</h2>
+        </header>
+        <p>สนามกีฬาในมหาวิทยาลัยมีทั้งสนามแข่งขันและพื้นที่ออกกำลังกาย เหมาะสำหรับการฝึกซ้อม การจัดการแข่งขัน และกิจกรรมชมรมกีฬาต่าง ๆ</p>
+        <div class="gallery">
+          <figure>
+            <img src="https://f.ptcdn.info/392/064/000/pstev06egqF7aadGvgRG-o.jpg" alt="สนามกีฬากลางแจ้งของมหาวิทยาลัย">
+            <figcaption>สนามกีฬากลางแจ้ง</figcaption>
+          </figure>
+          <figure>
+            <img src="https://cms.dmpcdn.com/ugcarticle/2019/09/04/7644b240-1649-11ec-b262-d7d777d2f789_original.jpg" alt="นักกีฬากำลังฝึกซ้อมในสนาม">
+            <figcaption>ลู่วิ่งมาตรฐาน</figcaption>
+          </figure>
+        </div> 
+      </article>
+    </section>
+
+    <div style="display:flex; justify-content:center; margin-top:auto; padding:50px 0;">
+      <a href="form.html" class="btn">แนะนำสถานที่ใหม่ +</a>
+    </div>
+
+    <footer class="sitefoot">
+      <p class="meta">นายณัฐดนัย ชาวไทย (663380381-5)</p>
+      <p class="meta">SC310006 SEC02</p>
+    </footer>
+  </main>
+</body>
+</html>
