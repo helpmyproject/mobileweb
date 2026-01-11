@@ -1,0 +1,7 @@
+{
+  "name": "lab05_lonic-Vue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
