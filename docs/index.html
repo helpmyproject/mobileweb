@@ -3,169 +3,135 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ผลงานนักศึกษา</title>
+    <title>ผลงานนักศึกษา - ณัฐดนัย ชาวไทย</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     />
+    <style>
+        .week-card { transition: transform 0.2s; }
+        .week-card:hover { transform: translateY(-5px); }
+        .summary-box { text-align: center; padding: 15px; border-radius: 10px; color: white; margin-bottom: 10px; }
+        .income-bg { background-color: #2dd36f; }
+        .expense-bg { background-color: #eb445a; }
+    </style>
 </head>
 <body>
-    <header class="text-center py-4">
+    <header class="text-center py-4 bg-light shadow-sm">
         <h3>รายวิชา Mobile Web Application Development</h3>
         <p>ภาคการศึกษา 2568/2</p>
-        <p>
-            <strong>ชื่อ-สกุลนักศึกษา: ณัฐดนัย ชาวไทย</strong>
-        </p>
-        <p>
-            <strong>รหัสนักศึกษา: 663380381-5</strong>
-        </p>
+        <p><strong>ชื่อ-สกุล: ณัฐดนัย ชาวไทย</strong> | <strong>รหัส: 663380381-5</strong></p>
     </header>
 
-    <main class="container mt-4">
-        <h4 class="mb-4 text-primary">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
+    <main class="container mt-5">
+        <h4 class="mb-4 text-primary border-bottom pb-2">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
         <div class="row g-4">
 
-            <!-- Week 1 -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 week-card">
                     <div class="card-body">
-                        <h5 class="week-title text-primary">
-                            Week 1: การเตรียม Workspace
-                        </h5>
-                        <p>
-                            ติดตั้งเครื่องมือที่จำเป็นสำหรับการฝึกปฏิบัติการในรายวิชา
-                            ทดลองสร้าง ionic-vue และ ionic-project
-                        </p>
-                        <a
-                            href="lab01_vue/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >Lab01_Vue</a>
-                        <a
-                            href="lab01_react/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >Lab01_React</a>
-                        <br />
-                        วันที่ส่งผลงาน: 25/11/2568
+                        <h5 class="text-primary">Week 1: Workspace</h5>
+                        <p>ติดตั้งเครื่องมือและสร้างโปรเจกต์ ionic-vue</p>
+                        <a href="lab01_vue/index.html" class="btn btn-outline-primary btn-sm" target="_blank">Vue</a>
+                        <a href="lab01_react/index.html" class="btn btn-outline-primary btn-sm" target="_blank">React</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 2 -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 week-card">
                     <div class="card-body">
                         <h5 class="text-primary">Week 2: HTML5 & CSS3</h5>
-                        <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
-                        <a
-                            href="lab02_guide/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br />
-                        วันที่ส่งผลงาน: 02/12/2568
+                        <p>ออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
+                        <a href="lab02_guide/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 3 -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 week-card">
                     <div class="card-body">
-                        <h5 class="text-primary">Week 3: JavaScript & TypeScript</h5>
+                        <h5 class="text-primary">Week 3: JS & TS</h5>
                         <p>การเขียน JavaScript และ TypeScript</p>
-                        <a
-                            href="lab03_typescript/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br />
-                        วันที่ส่งผลงาน: 10/12/2568
+                        <a href="lab03_typescript/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 4 -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 week-card">
                     <div class="card-body">
-                        <h5 class="text-primary">Week 4: Ionic Vue Fundamentals</h5>
-                        <p>การเริ่มต้นพัฒนาโมบายแอปพลิเคชันด้วย Ionic Framework ร่วมกับ Vue.js และการจัดการ UI Components</p>
-                        <a
-                            href="lab04_lonic-Vue/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br />
-                        วันที่ส่งผลงาน: 11/01/2569
+                        <h5 class="text-primary">Week 4: Ionic Vue</h5>
+                        <p>พื้นฐาน UI Components ของ Ionic</p>
+                        <a href="lab04_lonic-Vue/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 5 -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 week-card">
                     <div class="card-body">
-                        <h5 class="text-primary">Week 5: Photo App with React</h5>
-                        <p>การสร้างแอปแสดงรูปภาพด้วย React และสามารถ Build เป็น PWA หรือดาวน์โหลดไฟล์ .apk</p>
-                        <a
-                            href="lab05-photo-react/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน Lab05</a>
-                        <br />
-                        วันที่ส่งผลงาน: 17/01/2569
+                        <h5 class="text-primary">Week 5: Photo App</h5>
+                        <p>สร้างแอปรูปภาพด้วย React และ PWA</p>
+                        <a href="lab05-photo-react/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
             </div>
 
-        </div>
-        <html lang="th">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 5: Photo App with React</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
-</head>
-<body>
-    <header class="text-center py-4">
-        <h3>Lab 5: Photo App with React</h3>
-        <p>แสดงตัวอย่างหน้าจอและลิงก์ดาวน์โหลด</p>
-    </header>
-    <main class="container mt-4">
-        <h4 class="mb-4 text-primary">ตัวอย่างหน้าจอแอป</h4>
-        <div class="row g-4">
             <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="lab05-photo-react/screenshot1.png" class="card-img-top" alt="ตัวอย่างหน้าจอ 1">
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="lab05-photo-react/screenshot2.png" class="card-img-top" alt="ตัวอย่างหน้าจอ 2">
+                <div class="card h-100 week-card border-primary">
+                    <div class="card-body">
+                        <h5 class="text-primary font-weight-bold">Week 6: Firebase CRUD</h5>
+                        <p>แอปรายรับ-รายจ่าย เชื่อมต่อ Firebase Firestore แบบ Realtime</p>
+                        <a href="lab06-expense/index.html" class="btn btn-primary btn-sm" target="_blank">เปิดแอป Lab 06</a>
+                        <br><small class="text-muted">ส่งเมื่อ: 03/02/2569</small>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <h4 class="mt-5 text-primary">ลิงก์ดาวน์โหลด</h4>
-        <p>
-            ดาวน์โหลดไฟล์ APK: 
-            <a href="lab05-photo-react/build/app-release.apk" class="btn btn-success" target="_blank">Download .apk</a>
-        </p>
-        <p>
-            เปิดแอปในเว็บ (PWA/React): 
-            <a href="lab05-photo-react/index.html" class="btn btn-primary" target="_blank">เปิดแอปในเว็บ</a>
-        </p>
+        <section class="mt-5 p-4 border rounded bg-white shadow-sm">
+            <h4 class="text-primary mb-4">รายละเอียดผลงาน Lab 6: Expense Tracker</h4>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p>พัฒนาระบบบันทึกข้อมูลรายรับ-รายจ่ายโดยใช้ <strong>Ionic Vue</strong> ร่วมกับ <strong>Firebase Firestore</strong> รองรับการทำงานแบบ CRUD เต็มรูปแบบ:</p>
+                    <ul>
+                        <li><strong>Create:</strong> บันทึกข้อมูลผ่านหน้า Tab 2</li>
+                        <li><strong>Read:</strong> แสดงผล Realtime ผ่าน <code>onSnapshot</code> ในหน้า Tab 1</li>
+                        <li><strong>Update/Delete:</strong> จัดการข้อมูลผ่านหน้า EditExpense</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="row g-2">
+                        <div class="col-6"><div class="summary-box income-bg small">รายรับ<br>Realtime</div></div>
+                        <div class="col-6"><div class="summary-box expense-bg small">รายจ่าย<br>Calculated</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                    <img src="lab06-expense/screenshot-list.png" class="img-fluid rounded border" alt="หน้าจอรายการ">
+                    <p class="text-center mt-2 small">หน้าหน้ารายการ</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="lab06-expense/screenshot-add.png" class="img-fluid rounded border" alt="หน้าจอเพิ่มข้อมูล">
+                    <p class="text-center mt-2 small">หน้าจอเพิ่มข้อมูล</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="lab06-expense/screenshot-edit.png" class="img-fluid rounded border" alt="หน้าจอแก้ไข">
+                    <p class="text-center mt-2 small">หน้าจอแก้ไข/ลบ</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="lab06-expense/index.html" class="btn btn-success px-5">ทดลองใช้งานแอปในเว็บ (PWA)</a>
+            </div>
+        </section>
     </main>
 
-    <footer class="text-center mt-5 mb-3">
-        <p>
-            © 2026 Mobile Web Application Development — College of Computing, Khon Kaen University
-        </p>
+    <footer class="text-center mt-5 py-4 bg-dark text-white">
+        <p class="mb-0">© 2026 Mobile Web Application Development — College of Computing, Khon Kaen University</p>
     </footer>
 </body>
 </html>
