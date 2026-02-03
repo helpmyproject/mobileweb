@@ -9,24 +9,27 @@
         rel="stylesheet"
     />
     <style>
-        .week-card { transition: transform 0.2s; }
-        .week-card:hover { transform: translateY(-5px); }
+        .week-card { transition: transform 0.2s; border-radius: 15px; }
+        .week-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .summary-box { text-align: center; padding: 15px; border-radius: 10px; color: white; margin-bottom: 10px; }
         .income-bg { background-color: #2dd36f; }
         .expense-bg { background-color: #eb445a; }
+        .lab-section { border-radius: 20px; }
+        .screenshot-img { cursor: pointer; transition: 0.3s; }
+        .screenshot-img:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
     <header class="text-center py-4 bg-light shadow-sm">
         <h3>รายวิชา Mobile Web Application Development</h3>
-        <p>ภาคการศึกษา 2568/2</p>
+        <p class="text-muted">ภาคการศึกษา 2568/2</p>
         <p><strong>ชื่อ-สกุล: ณัฐดนัย ชาวไทย</strong> | <strong>รหัส: 663380381-5</strong></p>
     </header>
 
     <main class="container mt-5">
         <h4 class="mb-4 text-primary border-bottom pb-2">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
+        
         <div class="row g-4">
-
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 week-card">
                     <div class="card-body">
@@ -42,7 +45,7 @@
                 <div class="card h-100 week-card">
                     <div class="card-body">
                         <h5 class="text-primary">Week 2: HTML5 & CSS3</h5>
-                        <p>ออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
+                        <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
                         <a href="lab02_guide/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
                 <div class="card h-100 week-card">
                     <div class="card-body">
                         <h5 class="text-primary">Week 3: JS & TS</h5>
-                        <p>การเขียน JavaScript และ TypeScript</p>
+                        <p>การเขียน JavaScript และ TypeScript ขั้นพื้นฐาน</p>
                         <a href="lab03_typescript/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
@@ -62,7 +65,7 @@
                 <div class="card h-100 week-card">
                     <div class="card-body">
                         <h5 class="text-primary">Week 4: Ionic Vue</h5>
-                        <p>พื้นฐาน UI Components ของ Ionic</p>
+                        <p>พื้นฐาน UI Components และการจัดการ Navigation ใน Ionic Vue</p>
                         <a href="lab04_lonic-Vue/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
                     </div>
                 </div>
@@ -72,8 +75,8 @@
                 <div class="card h-100 week-card">
                     <div class="card-body">
                         <h5 class="text-primary">Week 5: Photo App</h5>
-                        <p>สร้างแอปรูปภาพด้วย React และ PWA</p>
-                        <a href="lab05-photo-react/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
+                        <p>แอปแสดงรูปภาพด้วย React และการ Build เป็น PWA/APK</p>
+                        <a href="lab05-photo-react/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน Lab05</a>
                     </div>
                 </div>
             </div>
@@ -90,20 +93,42 @@
             </div>
         </div>
 
-        <section class="mt-5 p-4 border rounded bg-white shadow-sm">
-            <h4 class="text-primary mb-4">รายละเอียดผลงาน Lab 6: Expense Tracker</h4>
+        <section class="mt-5 p-4 border rounded bg-white shadow-sm lab-section">
+            <h4 class="text-primary mb-4">Lab 5: Photo App with React</h4>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="lab05-photo-react/screenshot1.png" class="card-img-top screenshot-img" alt="ตัวอย่างหน้าจอ Lab 5 - 1">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="lab05-photo-react/screenshot2.png" class="card-img-top screenshot-img" alt="ตัวอย่างหน้าจอ Lab 5 - 2">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5>ดาวน์โหลดและติดตั้ง</h5>
+                    <p class="small text-muted">รองรับการใช้งานผ่านเว็บ (PWA) และ Android APK</p>
+                    <a href="lab05-photo-react/build/app-release.apk" class="btn btn-success w-100 mb-2" target="_blank">Download .apk</a>
+                    <a href="lab05-photo-react/index.html" class="btn btn-outline-primary w-100" target="_blank">เปิดแอปในเว็บ</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5 p-4 border rounded bg-white shadow-sm lab-section">
+            <h4 class="text-primary mb-4">Lab 6: Expense Tracker (Firebase)</h4>
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <p>พัฒนาระบบบันทึกข้อมูลรายรับ-รายจ่ายโดยใช้ <strong>Ionic Vue</strong> ร่วมกับ <strong>Firebase Firestore</strong> รองรับการทำงานแบบ CRUD เต็มรูปแบบ:</p>
+                    <p>พัฒนาระบบบันทึกข้อมูลรายรับ-รายจ่ายโดยใช้ <strong>Ionic Vue</strong> ร่วมกับ <strong>Firebase Firestore</strong> รองรับการทำงานแบบ CRUD:</p>
                     <ul>
-                        <li><strong>Create:</strong> บันทึกข้อมูลผ่านหน้า Tab 2</li>
-                        <li><strong>Read:</strong> แสดงผล Realtime ผ่าน <code>onSnapshot</code> ในหน้า Tab 1</li>
-                        <li><strong>Update/Delete:</strong> จัดการข้อมูลผ่านหน้า EditExpense</li>
+                        <li><strong>Realtime Read:</strong> ซิงค์ข้อมูลอัตโนมัติเมื่อฐานข้อมูลเปลี่ยน</li>
+                        <li><strong>Calculation:</strong> คำนวณยอดรวมรายรับ-รายจ่ายแบบอัตโนมัติ</li>
+                        <li><strong>Cloud Storage:</strong> ข้อมูลไม่หายเมื่อปิดแอปหรือเปลี่ยนเครื่อง</li>
                     </ul>
                 </div>
-                <div class="col-lg-5 text-center">
-                    <div class="row g-2">
-                        <div class="col-6"><div class="summary-box income-bg small">รายรับ<br>Realtime</div></div>
+                <div class="col-lg-5">
+                    <div class="row g-2 text-center">
+                        <div class="col-6"><div class="summary-box income-bg small">รายรับ<br>Firebase</div></div>
                         <div class="col-6"><div class="summary-box expense-bg small">รายจ่าย<br>Calculated</div></div>
                     </div>
                 </div>
@@ -111,21 +136,21 @@
 
             <div class="row g-3 mt-3">
                 <div class="col-md-4">
-                    <img src="lab06-expense/screenshot-list.png" class="img-fluid rounded border" alt="หน้าจอรายการ">
-                    <p class="text-center mt-2 small">หน้าหน้ารายการ</p>
+                    <img src="lab06-expense/screenshot-list.png" class="img-fluid rounded border screenshot-img" alt="หน้าจอรายการ">
+                    <p class="text-center mt-2 small text-muted">หน้าหน้ารายการ (Realtime)</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="lab06-expense/screenshot-add.png" class="img-fluid rounded border" alt="หน้าจอเพิ่มข้อมูล">
-                    <p class="text-center mt-2 small">หน้าจอเพิ่มข้อมูล</p>
+                    <img src="lab06-expense/screenshot-add.png" class="img-fluid rounded border screenshot-img" alt="หน้าจอเพิ่มข้อมูล">
+                    <p class="text-center mt-2 small text-muted">หน้าจอเพิ่มข้อมูล</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="lab06-expense/screenshot-edit.png" class="img-fluid rounded border" alt="หน้าจอแก้ไข">
-                    <p class="text-center mt-2 small">หน้าจอแก้ไข/ลบ</p>
+                    <img src="lab06-expense/screenshot-edit.png" class="img-fluid rounded border screenshot-img" alt="หน้าจอแก้ไข">
+                    <p class="text-center mt-2 small text-muted">หน้าจอแก้ไข/ลบ</p>
                 </div>
             </div>
 
-            <div class="text-center mt-4">
-                <a href="lab06-expense/index.html" class="btn btn-success px-5">ทดลองใช้งานแอปในเว็บ (PWA)</a>
+            <div class="text-center mt-4 border-top pt-3">
+                <a href="lab06-expense/index.html" class="btn btn-primary px-5 btn-lg">ทดลองใช้งานแอป Lab 06 (PWA)</a>
             </div>
         </section>
     </main>
