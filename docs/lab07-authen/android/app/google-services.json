@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "891208220463",
+    "project_id": "lab06-ionic-firebase-85fa6",
+    "storage_bucket": "lab06-ionic-firebase-85fa6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891208220463:android:991bae8c507d59bec7abda",
+        "android_client_info": {
+          "package_name": "cpkku.natdanai.lab07"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891208220463-jbjl1ju7ukhf1cj3imnlphch4ek2s9nh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cpkku.natdanai.lab07",
+            "certificate_hash": "a566382ca44e6066d0d888616048cbb5becb9627"
+          }
+        },
+        {
+          "client_id": "891208220463-5tsijqnp26hqa2tg5at6rqe3hipkbk1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYuCL-YW6T-Ak_GAKioGxM2UbYuoWt8TI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891208220463-5tsijqnp26hqa2tg5at6rqe3hipkbk1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
