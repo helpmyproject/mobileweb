@@ -14,10 +14,16 @@
         .summary-box { text-align: center; padding: 15px; border-radius: 10px; color: white; margin-bottom: 10px; }
         .income-bg { background-color: #2dd36f; }
         .expense-bg { background-color: #eb445a; }
+        .ai-bg { background-color: #7044ff; } /* สีธีม AI */
         .lab-section { border-radius: 20px; background-color: white; }
         .screenshot-img { cursor: pointer; transition: 0.3s; border-radius: 10px; }
         .screenshot-img:hover { opacity: 0.8; }
         body { background-color: #f8f9fa; }
+        .text-ai { color: #7044ff; }
+        .btn-ai { background-color: #7044ff; color: white; }
+        .btn-ai:hover { background-color: #5a35d4; color: white; }
+        .btn-outline-ai { border-color: #7044ff; color: #7044ff; }
+        .btn-outline-ai:hover { background-color: #7044ff; color: white; }
     </style>
 </head>
 <body>
@@ -101,6 +107,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 week-card border-info" style="border-color: #7044ff !important;">
+                    <div class="card-body">
+                        <h5 class="fw-bold" style="color: #7044ff;">Week 8: AI Integration</h5>
+                        <p>การเชื่อมต่อ Gemini AI API เพื่อสร้างระบบ Chatbot อัจฉริยะ</p>
+                        <a href="lab08-ai/index.html" class="btn btn-ai btn-sm" target="_blank">เปิดแอป Lab 08</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <section class="mt-5 p-4 border shadow-sm lab-section">
@@ -157,6 +173,33 @@
                 </div>
                 <div class="col-md-6">
                     <a href="lab07-authen/build/app-release.apk" class="btn btn-success w-100">ดาวน์โหลด Android APK</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5 p-4 border shadow-sm lab-section" style="border-left: 5px solid #7044ff !important;">
+            <h4 class="fw-bold mb-4" style="color: #7044ff;">Lab 8: Generative AI Integration (Gemini)</h4>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>การพัฒนา Chatbot อัจฉริยะที่เชื่อมต่อกับ <strong>Google Gemini AI</strong> ผ่าน API:</p>
+                    <ul>
+                        <li><strong>AI Chat Interface:</strong> ออกแบบ UI สำหรับการโต้ตอบกับ AI แบบเรียลไทม์</li>
+                        <li><strong>Gemini Pro API:</strong> การส่ง Prompt และรับการประมวลผลคำตอบจาก AI</li>
+                        <li><strong>Environment Variables:</strong> การจัดการ API Key อย่างปลอดภัย</li>
+                        <li><strong>Markdown Support:</strong> รองรับการแสดงผลคำตอบที่เป็น Code หรือการจัดรูปแบบข้อความ</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="summary-box ai-bg shadow">Google Gemini Pro</div>
+                    <div class="summary-box shadow" style="background-color: #5a35d4;">Smart Assistant</div>
+                </div>
+            </div>
+            <div class="row g-3 mt-4">
+                <div class="col-md-6">
+                    <a href="lab08-ai/index.html" class="btn btn-ai w-100">ลองใช้งาน AI Chatbot</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="lab08-ai/build/app-release.apk" class="btn btn-outline-ai w-100">ดาวน์โหลด Android APK (Lab 08)</a>
                 </div>
             </div>
         </section>
