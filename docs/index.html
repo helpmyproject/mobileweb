@@ -4,211 +4,194 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ผลงานนักศึกษา - ณัฐดนัย ชาวไทย</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        .week-card { transition: transform 0.2s; border-radius: 15px; border: 1px solid rgba(0,0,0,0.125); }
-        .week-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .summary-box { text-align: center; padding: 15px; border-radius: 10px; color: white; margin-bottom: 10px; }
-        .income-bg { background-color: #2dd36f; }
-        .expense-bg { background-color: #eb445a; }
-        .ai-bg { background-color: #7044ff; } /* สีธีม AI */
-        .lab-section { border-radius: 20px; background-color: white; }
-        .screenshot-img { cursor: pointer; transition: 0.3s; border-radius: 10px; }
-        .screenshot-img:hover { opacity: 0.8; }
-        body { background-color: #f8f9fa; }
-        .text-ai { color: #7044ff; }
-        .btn-ai { background-color: #7044ff; color: white; }
-        .btn-ai:hover { background-color: #5a35d4; color: white; }
-        .btn-outline-ai { border-color: #7044ff; color: #7044ff; }
-        .btn-outline-ai:hover { background-color: #7044ff; color: white; }
+        /* สไตล์พื้นหลังไล่เฉดสีเข้ม */
+        body {
+            background: radial-gradient(circle at top right, #001f3f, #000000);
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* เอฟเฟกต์กระจก (Glassmorphism) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .header-glass {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(56, 128, 255, 0.3);
+        }
+
+        /* การ์ดรายสัปดาห์สไตล์กระจก */
+        .week-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .week-card:hover {
+            transform: translateY(-10px);
+            background: rgba(56, 128, 255, 0.1);
+            border-color: #3880ff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-blue { color: #3880ff; }
+        .btn-blue { background-color: #3880ff; color: white; border: none; }
+        .btn-blue:hover { background-color: #2b63d1; color: white; }
+        .btn-outline-blue { border-color: #3880ff; color: #3880ff; }
+        .btn-outline-blue:hover { background: #3880ff; color: white; }
+
+        .summary-box {
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .lab-section {
+            border-left: 6px solid #3880ff !important;
+            margin-bottom: 40px;
+        }
+
+        .screenshot-img {
+            border-radius: 15px;
+            border: 2px solid rgba(56, 128, 255, 0.2);
+            transition: 0.4s;
+        }
+
+        .screenshot-img:hover {
+            border-color: #3880ff;
+            transform: scale(1.03);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(56, 128, 255, 0.2);
+        }
+
+        .badge-ai { background: #7044ff; color: white; }
+        .badge-success { background: #2dd36f; color: white; }
     </style>
 </head>
 <body>
-    <header class="text-center py-4 bg-white shadow-sm">
-        <h3 class="fw-bold text-dark">รายวิชา Mobile Web Application Development</h3>
-        <p class="text-muted">ภาคการศึกษา 2568/2</p>
-        <p class="mb-0"><strong>ชื่อ-สกุล:</strong> ณัฐดนัย ชาวไทย | <strong>รหัสประจำตัว:</strong> 663380381-5</p>
+    <header class="text-center py-5 header-glass shadow-lg">
+        <h2 class="fw-bold text-blue">Mobile Web Application Development</h2>
+        <p class="opacity-75">ภาคการศึกษา 2568/2 | College of Computing KKU</p>
+        <div class="mt-3">
+            <span class="badge glass-panel p-2 px-3 border-blue">
+                <i class="bi bi-person-circle"></i> ณัฐดนัย ชาวไทย | 663380381-5
+            </span>
+        </div>
     </header>
 
     <main class="container mt-5">
-        <h4 class="mb-4 text-primary border-bottom pb-2">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
+        <h4 class="mb-4 text-blue border-bottom border-primary border-opacity-25 pb-3">
+            <i class="bi bi-grid-3x3-gap-fill"></i> สรุปผลงานการฝึกปฏิบัติรายสัปดาห์
+        </h4>
         
         <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card h-100 week-card">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 1: Workspace</h5>
-                        <p>ติดตั้งเครื่องมือและสร้างโปรเจกต์ ionic-vue ครั้งแรก</p>
-                        <a href="lab01_vue/index.html" class="btn btn-outline-primary btn-sm" target="_blank">Vue</a>
-                        <a href="lab01_react/index.html" class="btn btn-outline-primary btn-sm" target="_blank">React</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="text-blue fw-bold">Week 1: Workspace</h6>
+                        <p class="small opacity-75">การติดตั้งและสร้างโปรเจกต์ Ionic ครั้งแรก</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-outline-blue btn-sm w-100">ดูผลงาน</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 week-card" style="border: 1px solid #3880ff; background: rgba(56, 128, 255, 0.15);">
                     <div class="card-body">
-                        <h5 class="text-primary">Week 2: HTML5 & CSS3</h5>
-                        <p>การออกแบบโครงสร้างเว็บและตกแต่งด้วย CSS3 พื้นฐาน</p>
-                        <a href="lab02_guide/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 3: JS & TS</h5>
-                        <p>เรียนรู้การเขียน JavaScript และ TypeScript สำหรับ Mobile App</p>
-                        <a href="lab03_typescript/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 4: Ionic Vue</h5>
-                        <p>เรียนรู้การใช้ UI Components และระบบ Navigation ของ Ionic</p>
-                        <a href="lab04_lonic-Vue/index.html" class="btn btn-outline-primary btn-sm" target="_blank">ดูผลงาน</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 5: Photo App</h5>
-                        <p>แอปกล้องถ่ายรูปด้วย React และการ Build เป็น PWA/APK</p>
-                        <a href="lab05-photo-react/index.html" class="btn btn-outline-primary btn-sm" target="_blank">เปิดแอป Web</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card border-primary">
-                    <div class="card-body">
-                        <h5 class="text-primary fw-bold">Week 6: Firebase CRUD</h5>
-                        <p>แอปรายรับ-รายจ่าย ซิงค์ข้อมูลผ่าน Firebase Firestore</p>
-                        <a href="lab06-expense/index.html" class="btn btn-primary btn-sm" target="_blank">เปิดแอป Lab 06</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card border-success">
-                    <div class="card-body">
-                        <h5 class="text-success fw-bold">Week 7: Authentication</h5>
-                        <p>ระบบ Login ผ่าน Email, Google และเบอร์โทรศัพท์ (SMS)</p>
-                        <a href="lab07-authen/index.html" class="btn btn-success btn-sm" target="_blank">เปิดแอป Lab 07</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 week-card border-info" style="border-color: #7044ff !important;">
-                    <div class="card-body">
-                        <h5 class="fw-bold" style="color: #7044ff;">Week 8: AI Integration</h5>
-                        <p>การเชื่อมต่อ Gemini AI API เพื่อสร้างระบบ Chatbot อัจฉริยะ</p>
-                        <a href="lab08-ai/index.html" class="btn btn-ai btn-sm" target="_blank">เปิดแอป Lab 08</a>
+                        <div class="badge bg-primary mb-2">LATEST</div>
+                        <h6 class="text-white fw-bold">Week 9: Sensors</h6>
+                        <p class="small">แอปตรวจจับความเคลื่อนไหวด้วย Accelerometer</p>
+                        <a href="#lab09" class="btn btn-blue btn-sm w-100">ดูรายละเอียด</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <section class="mt-5 p-4 border shadow-sm lab-section">
-            <h4 class="text-primary mb-4 fw-bold">Lab 6: Expense Tracker (Firestore)</h4>
+        <section id="lab09" class="mt-5 p-4 glass-panel lab-section shadow-lg">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary rounded-circle p-2 me-3 shadow-highlight">
+                    <i class="bi bi-cpu-fill text-white fs-4"></i>
+                </div>
+                <h4 class="fw-bold text-white m-0">Lab 9: Mobile Sensors & Workout Tracker</h4>
+            </div>
+
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <p>ระบบบันทึกรายรับ-รายจ่ายที่ทำงานร่วมกับ Cloud Firestore แบบ Realtime:</p>
-                    <ul>
-                        <li>แสดงผลข้อมูลรายวันและคำนวณยอดรวมอัตโนมัติ</li>
-                        <li>รองรับการ เพิ่ม แก้ไข และลบข้อมูลผ่าน UI</li>
-                        <li>จัดเก็บข้อมูลบนระบบ Cloud ซิงค์ข้อมูลทุกแพลตฟอร์ม</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="summary-box income-bg">Realtime Firestore</div>
-                    <div class="summary-box expense-bg">Ionic Vue CRUD</div>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <a href="lab06-expense/index.html" class="btn btn-primary">ลองใช้งาน Lab 6</a>
-            </div>
-        </section>
-
-        <section class="mt-5 p-4 border shadow-sm lab-section">
-            <h4 class="text-success mb-4 fw-bold">Lab 7: Multi-Platform Authentication</h4>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>พัฒนาระบบรักษาความปลอดภัยและการเข้าถึงข้อมูลผู้ใช้ด้วย <strong>Capacitor Firebase Authentication</strong>:</p>
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="p-3 border rounded bg-light h-100">
-                                <h6 class="fw-bold">Google Auth</h6>
-                                <p class="small text-muted mb-0">ล็อกอินผ่านบัญชี Google โดยใช้ Native SDK บน Android และ Popup บน Web</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-3 border rounded bg-light h-100">
-                                <h6 class="fw-bold">Phone OTP</h6>
-                                <p class="small text-muted mb-0">ระบบยืนยันตัวตนผ่านเบอร์โทรศัพท์ด้วยการส่งรหัส SMS</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-3 border rounded bg-light h-100">
-                                <h6 class="fw-bold">Multi-Platform</h6>
-                                <p class="small text-muted mb-0">สลับ Service อัตโนมัติระหว่าง Web และ Android Native</p>
-                            </div>
-                        </div>
+                    <p class="lead text-blue fw-bold">Smart Accelerometer Integration</p>
+                    <p class="opacity-75">พัฒนาระบบนับรอบกายบริหารอัจฉริยะที่ตอบสนองแบบ Real-time ด้วย Hardware Sensor:</p>
+                    <div class="row g-2">
+                        <div class="col-md-6 small"><i class="bi bi-check2-circle text-blue"></i> Motion detection (UP/DOWN)</div>
+                        <div class="col-md-6 small"><i class="bi bi-check2-circle text-blue"></i> Text-to-Speech Guidance</div>
+                        <div class="col-md-6 small"><i class="bi bi-check2-circle text-blue"></i> Haptic (Vibration) Alerts</div>
+                        <div class="col-md-6 small"><i class="bi bi-check2-circle text-blue"></i> Dark & Blue UI Design</div>
                     </div>
                 </div>
+                <div class="col-lg-4 mt-4 mt-lg-0 text-center">
+                    <div class="summary-box mb-2" style="background: rgba(56, 128, 255, 0.2); color: #3880ff;">Hardware Sensor</div>
+                    <div class="summary-box" style="background: rgba(255, 255, 255, 0.05); color: #fff;">Logic Rule-based</div>
+                </div>
             </div>
+
+            <div class="row g-4 mt-4 text-center">
+                <div class="col-md-4">
+                    <img src="lab09_เริ่ม.jpg" class="img-fluid screenshot-img shadow" alt="หน้าเริ่ม">
+                    <p class="small mt-3 opacity-75">หน้าจอเริ่มต้น (Idle)</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="lab09_นับ.jpg" class="img-fluid screenshot-img shadow" alt="ขณะกำลังนับ">
+                    <p class="small mt-3 opacity-75 text-blue">ขณะกำลังประมวลผล (Active)</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="lab09_จบ.jpg" class="img-fluid screenshot-img shadow" alt="หน้าสรุปสถิติ">
+                    <p class="small mt-3 opacity-75">สถิติหลังจบงาน (Summary)</p>
+                </div>
+            </div>
+
+            <div class="mt-5 p-4 glass-panel border-0" style="background: rgba(0,0,0,0.3);">
+                <h6 class="fw-bold mb-3"><i class="bi bi-play-btn-fill text-danger"></i> วิดีโอสาธิตการใช้งานแอปบนอุปกรณ์จริง</h6>
+                <div class="ratio ratio-16x9 shadow-lg overflow-hidden" style="border-radius: 15px; max-width: 700px; margin: 0 auto; border: 1px solid rgba(56, 128, 255, 0.3);">
+                    <iframe src="https://www.youtube.com/embed/YOUR_ID" title="Demo Video" allowfullscreen></iframe>
+                </div>
+            </div>
+
             <div class="row g-3 mt-4">
                 <div class="col-md-6">
-                    <a href="lab07-authen/index.html" class="btn btn-outline-success w-100">เปิดแอป Lab 07 ในเว็บ</a>
+                    <a href="lab09-sensors/index.html" class="btn btn-blue py-3 w-100 fw-bold">
+                        <i class="bi bi-browser-safari"></i> เปิดใช้งาน WEB APP
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="lab07-authen/build/app-release.apk" class="btn btn-success w-100">ดาวน์โหลด Android APK</a>
+                    <a href="lab09-sensors/build/app-release.apk" class="btn btn-outline-blue py-3 w-100 fw-bold">
+                        <i class="bi bi-android2"></i> ดาวน์โหลด Android APK
+                    </a>
                 </div>
             </div>
         </section>
-
-        <section class="mt-5 p-4 border shadow-sm lab-section" style="border-left: 5px solid #7044ff !important;">
-            <h4 class="fw-bold mb-4" style="color: #7044ff;">Lab 8: Generative AI Integration (Gemini)</h4>
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <p>การพัฒนา Chatbot อัจฉริยะที่เชื่อมต่อกับ <strong>Google Gemini AI</strong> ผ่าน API:</p>
-                    <ul>
-                        <li><strong>AI Chat Interface:</strong> ออกแบบ UI สำหรับการโต้ตอบกับ AI แบบเรียลไทม์</li>
-                        <li><strong>Gemini Pro API:</strong> การส่ง Prompt และรับการประมวลผลคำตอบจาก AI</li>
-                        <li><strong>Environment Variables:</strong> การจัดการ API Key อย่างปลอดภัย</li>
-                        <li><strong>Markdown Support:</strong> รองรับการแสดงผลคำตอบที่เป็น Code หรือการจัดรูปแบบข้อความ</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="summary-box ai-bg shadow">Google Gemini Pro</div>
-                    <div class="summary-box shadow" style="background-color: #5a35d4;">Smart Assistant</div>
-                </div>
-            </div>
-            <div class="row g-3 mt-4">
-                <div class="col-md-6">
-                    <a href="lab08-ai/index.html" class="btn btn-ai w-100">ลองใช้งาน AI Chatbot</a>
-                </div>
-                <div class="col-md-6">
-                    <a href="lab08-ai/build/app-release.apk" class="btn btn-outline-ai w-100">ดาวน์โหลด Android APK (Lab 08)</a>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <footer class="text-center mt-5 py-4 bg-dark text-white">
-        <p class="mb-1">© 2026 Mobile Web Application Development</p>
-        <p class="small text-muted mb-0">College of Computing, Khon Kaen University</p>
+    <footer class="text-center mt-5 py-5">
+        <p class="mb-1 opacity-50">© 2026 Mobile Web Application Development</p>
+        <p class="small text-blue">Designed by Natdanai Chaothai</p>
     </footer>
 </body>
 </html>

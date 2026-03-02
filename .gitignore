@@ -1,3 +1,4 @@
+# --- Original List ---
 node_modules/
 .pnp
 .pnp.*
@@ -21,3 +22,21 @@ logs/
 .capacitor/
 .vite/
 *.local
+
+# --- Added for Ionic / Capacitor / Android (Essential for Lab 09) ---
+.ignored_node_modules/
+dist/
+www/
+android/build/
+android/.gradle/
+android/app/build/
+android/app/src/main/assets/public/
+caps-debug.log
+
+# --- Added for pnpm ---
+.pnpm-debug.log
+pnpm-lock.yaml (ทางเลือก: ถ้าจะเก็บ lock ไว้ไม่ต้องใส่ตัวนี้)
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
